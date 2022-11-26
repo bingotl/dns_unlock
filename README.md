@@ -1,8 +1,7 @@
-# 一、搭建（能解锁的落地机）：安装dnsmasq+sniproxy
+# 一、能解锁的落地机：搭建安装dnsmasq+sniproxy
 wget --no-check-certificate -O dnsmasq_sniproxy.sh https://raw.githubusercontent.com/myxuchangbin/dnsmasq_sniproxy_install/master/dnsmasq_sniproxy.sh && bash dnsmasq_sniproxy.sh -i
 
--f 快速安装
-
+-f 快速安装  
 -i 正常安装
 
 ### 如果用ipv6解锁
@@ -62,3 +61,7 @@ chattr -i /etc/resolv.conf
 
 ### 查看本机DNS
 cat /etc/resolv.conf
+
+资料  
+https://github.com/myxuchangbin/dnsmasq_sniproxy_install  
+https://raw.githubusercontent.com/myxuchangbin/dnsmasq_sniproxy_install/master/sniproxy.conf
