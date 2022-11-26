@@ -28,6 +28,11 @@ wget --no-check-certificate -O unlock.sh https://raw.githubusercontent.com/bingo
 默认已经解锁大部分流媒体网站  
 /etc/dnsmasq.d/unlock.conf
 
+建议把/etc/dnsmasq.d/unlock.conf的DNS，替换为系统默认的DNS（/etc/resolv.conf.bak）
+server=8.8.8.8
+server=1.1.1.1
+server=208.67.222.222
+
 ### 不使用dnsmasq（卸载解锁）：
 chattr -i /etc/resolv.conf
 
