@@ -19,7 +19,7 @@ ipv6_first：query for both IPv4 and IPv6, use IPv6 is present
 ### 卸载
 wget --no-check-certificate -O dnsmasq_sniproxy.sh https://raw.githubusercontent.com/myxuchangbin/dnsmasq_sniproxy_install/master/dnsmasq_sniproxy.sh && bash dnsmasq_sniproxy.sh -u
 
-# 二、不能解锁的机器：执行解锁程序（安装dnsmasq），并修改dns为127.0.0.1
+# 二、不能解锁的机器
 wget --no-check-certificate -O unlock.sh https://raw.githubusercontent.com/bingotl/dns_unlock/main/unlock.sh && chmod +x unlock.sh
 
 ./unlock.sh ip
