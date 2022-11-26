@@ -24,11 +24,14 @@ wget --no-check-certificate -O unlock.sh https://raw.githubusercontent.com/bingo
 
 ./unlock.sh ip
 
+ping netflix.com  
+显示的是你的解锁机ip，那说明已经成功
+
 ### dnsmasq的分流配置文件：
-默认已经解锁大部分流媒体网站  
 /etc/dnsmasq.d/unlock.conf
 
-建议把/etc/dnsmasq.d/unlock.conf的DNS，替换为系统默认的DNS（/etc/resolv.conf.bak）  
+默认已经解锁大部分流媒体网站  
+建议把分流文件的DNS，替换为系统默认的DNS（备份文件/etc/resolv.conf.bak）  
 server=8.8.8.8  
 server=1.1.1.1  
 server=208.67.222.222  
