@@ -149,6 +149,15 @@ EOF
 
     systemctl restart dnsmasq
     echo "dnsmasq启动成功"
+    echo ""
+    echo "本机当前DNS"
+    echo "---------------------"
+    cat /etc/resolv.conf
+    echo ""
+    echo "备份DNS/etc/resolv.conf.bak"
+    echo "---------------------"
+    cat /etc/resolv.conf.bak
+    echo "建议把系统默认DNS添加到/etc/dnsmasq.d/unlock.conf文件中"
 else
     echo "dnsmasq安装失败, 请检查仓库状况"
 fi
