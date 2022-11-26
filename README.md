@@ -33,7 +33,6 @@ systemctl stop dnsmasq
 systemctl disable dnsmasq
 
 # 其他命令
-
 systemctl enable dnsmasq
 
 systemctl stop dnsmasq
@@ -56,11 +55,11 @@ systemctl restart sniproxy
 systemctl status sniproxy
                              
 
-加锁：
+加锁DNS文件
 chattr +i /etc/resolv.conf
 
-解锁
+解锁DNS文件
 chattr -i /etc/resolv.conf
 
-本机DNS：
+查看本机DNS
 cat /etc/resolv.conf
