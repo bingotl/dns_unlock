@@ -7,8 +7,8 @@ wget --no-check-certificate -O dnsmasq_sniproxy.sh https://raw.githubusercontent
 ### 如果用ipv6解锁
 修改配置/etc/sniproxy.conf 重启机器
 
-resolver {
-     mode ipv6_first
+resolver {  
+     mode ipv6_first  
  }
  
 ipv4_only   query for IPv4 addresses (default)  
