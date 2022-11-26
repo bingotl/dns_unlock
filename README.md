@@ -11,10 +11,10 @@ resolver {
      mode ipv6_first  
  }
  
-ipv4_only   query for IPv4 addresses (default)  
-ipv6_only   query for IPv6 addresses  
-ipv4_first  query for both IPv4 and IPv6, use IPv4 is present  
-ipv6_first  query for both IPv4 and IPv6, use IPv6 is present  
+ipv4_only：query for IPv4 addresses (default)  
+ipv6_only：query for IPv6 addresses  
+ipv4_first：query for both IPv4 and IPv6, use IPv4 is present  
+ipv6_first：query for both IPv4 and IPv6, use IPv6 is present  
 
 ### 卸载
 wget --no-check-certificate -O dnsmasq_sniproxy.sh https://raw.githubusercontent.com/myxuchangbin/dnsmasq_sniproxy_install/master/dnsmasq_sniproxy.sh && bash dnsmasq_sniproxy.sh -u
