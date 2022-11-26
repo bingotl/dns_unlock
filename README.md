@@ -46,15 +46,13 @@ systemctl disable dnsmasq
 
 # 其他命令
 systemctl enable dnsmasq  
-systemctl stop dnsmasq             
-systemctl disable dnsmasq                
+systemctl stop dnsmasq && systemctl disable dnsmasq  
 systemctl restart dnsmasq            
 systemctl status dnsmasq  
 
                              
 systemctl enable sniproxy            
-systemctl stop sniproxy                
-systemctl disable sniproxy              
+systemctl stop sniproxy && systemctl disable sniproxy              
 systemctl restart sniproxy                     
 systemctl status sniproxy  
                              
