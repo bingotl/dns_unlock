@@ -17,8 +17,7 @@ ipv4_first：query for both IPv4 and IPv6, use IPv4 is present
 ipv6_first：query for both IPv4 and IPv6, use IPv6 is present  
 
 ### 代理域名列表（白名单）
-默认代理Netflix Hulu HBO等，如需增删流媒体域名请编辑文件/etc/sniproxy.conf
-
+默认代理Netflix Hulu HBO等大部分流媒体域名，具体文件/etc/sniproxy.conf
 
 # 二、不能解锁的机器：安装dnsmasq
 wget --no-check-certificate -O unlock.sh https://raw.githubusercontent.com/bingotl/dns_unlock/main/unlock.sh && chmod +x unlock.sh  
@@ -28,9 +27,9 @@ ping netflix.com
 显示的是你的解锁机ip，那说明已经成功
 
 ### dnsmasq的分流配置文件（指定域名分流到解锁ip）  
-/etc/dnsmasq.d/unlock.conf
+/etc/dnsmasq.d/unlock.conf  
+默认包含大部分流媒体网站
 
-默认包含大部分流媒体网站  
 建议把分流文件的DNS，替换为系统原本的DNS（查看备份文件/etc/resolv.conf.bak）  
 server=8.8.8.8  
 server=1.1.1.1  
