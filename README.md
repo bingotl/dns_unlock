@@ -35,7 +35,10 @@ server=8.8.8.8
 server=1.1.1.1  
 server=208.67.222.222  
 
-### 不使用dnsmasq（卸载解锁）：
+### 取消解锁：
+./unlock.sh r
+
+### 手动取消解锁：
 chattr -i /etc/resolv.conf  
 cat > /etc/resolv.conf <<EOF  
 nameserver 8.8.8.8  
