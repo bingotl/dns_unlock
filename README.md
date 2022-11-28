@@ -65,9 +65,20 @@ chattr -i /etc/resolv.conf
 
 查看本机DNS  
 cat /etc/resolv.conf
-                             
+
 使用dnsmasq需要把系统DNS设为127.0.0.1（脚本已包含）
-                             
+
+### iptables相关命令
+入站：禁用全部ip访问80/443端口（执行一次就行）  
+iptables -I INPUT -p tcp --dport 443 -j DROP  
+iptables -I INPUT -p tcp --dport 80 -j DROP 
+
+#入站：放行某个ip访问80/443端口  
+iptables -I INPUT -s ip -p tcp --dport 443 -j ACCEPT
+iptables -I INPUT -s ip -p tcp --dport 80 -j ACCEPT
+
+service iptables save
+      
 资料  
 https://github.com/myxuchangbin/dnsmasq_sniproxy_install  
 https://raw.githubusercontent.com/myxuchangbin/dnsmasq_sniproxy_install/master/sniproxy.conf
