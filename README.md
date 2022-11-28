@@ -69,7 +69,7 @@ cat /etc/resolv.conf
 使用dnsmasq需要把系统DNS设为127.0.0.1（脚本已包含）
 
 ### iptables相关命令
-入站：禁用全部ip访问80/443端口（执行一次就行）  
+入站：先禁止所有ip访问80/443端口（执行一次就行）  
 iptables -I INPUT -p tcp --dport 443 -j DROP  
 iptables -I INPUT -p tcp --dport 80 -j DROP
 
