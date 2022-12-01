@@ -58,9 +58,9 @@ systemctl restart sniproxy && systemctl status sniproxy
 
 ### 系统DNS相关命令
 加锁DNS文件  
-chattr +i /etc/resolv.conf
+chattr +i /etc/resolv.conf  
 解锁DNS文件  
-chattr -i /etc/resolv.conf
+chattr -i /etc/resolv.conf  
 查看本机DNS  
 cat /etc/resolv.conf
 
