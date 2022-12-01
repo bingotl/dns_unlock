@@ -71,7 +71,7 @@ cat /etc/resolv.conf
 iptables -I INPUT -p tcp --dport 443 -j DROP  
 iptables -I INPUT -p tcp --dport 80 -j DROP
 
-### 入站：放行某个ip访问80/443端口  
+入站：放行某个ip访问80/443端口  
 iptables -I INPUT -s ip -p tcp --dport 443 -j ACCEPT  
 iptables -I INPUT -s ip -p tcp --dport 80 -j ACCEPT
 
