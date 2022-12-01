@@ -43,35 +43,30 @@ chattr -i /etc/resolv.conf
 cat > /etc/resolv.conf <<EOF  
 nameserver 8.8.8.8  
 nameserver 1.1.1.1  
-EOF
-               
+EOF  
 systemctl stop dnsmasq  
 systemctl disable dnsmasq
 
 # 其他命令
-systemctl enable dnsmasq  
+systemctl enable dnsmasq && systemctl start dnsmasq  
 systemctl stop dnsmasq && systemctl disable dnsmasq  
-systemctl restart dnsmasq            
-systemctl status dnsmasq  
-         
-systemctl enable sniproxy            
+systemctl restart dnsmasq && systemctl status dnsmasq 
+ 
+systemctl enable sniproxy &&systemctl start sniproxy  
 systemctl stop sniproxy && systemctl disable sniproxy              
-systemctl restart sniproxy                     
-systemctl status sniproxy
+systemctl restart sniproxy && systemctl status sniproxy
 
 ### 系统DNS相关命令
 加锁DNS文件  
 chattr +i /etc/resolv.conf
-
 解锁DNS文件  
 chattr -i /etc/resolv.conf
-
 查看本机DNS  
 cat /etc/resolv.conf
 
 使用dnsmasq需要把系统DNS设为127.0.0.1（脚本已包含）
 
-### iptables相关命令
+### iptables相关命令（解锁机上执行，防止被盗用代理）
 入站：先禁止所有ip访问80/443端口（执行一次就行）  
 iptables -I INPUT -p tcp --dport 443 -j DROP  
 iptables -I INPUT -p tcp --dport 80 -j DROP
