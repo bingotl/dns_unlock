@@ -11,7 +11,7 @@ unlock(){
 if grep -Eqi "CentOS" /etc/issue || grep -Eq "CentOS" /etc/*-release; then
     yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
     yum install bind-utils
-    yum install -y dnsmasq
+    echo y | yum install -y dnsmasq
 elif grep -Eqi "Debian" /etc/issue || grep -Eq "Debian" /etc/*-release; then
     apt-get update
     apt-get install dnsutils
