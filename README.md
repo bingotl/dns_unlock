@@ -3,8 +3,7 @@
 但是有个问题，一旦落地鸡挂了，就可能导致本机DNS错误直接无法上网，而且本机所有网站都要经过落地鸡DNS解析，这就很不舒服。
 
 本脚本原理：  
-在落地鸡只安装sniproxy，在本机安装dnsmasq，并把本机的系统DNS改为127.0.0.1，  
-此时dnsmasq取代系统DNS工作，把流媒体域名分流落地鸡的sniproxy代理，同时不影响其他网站解析。并且就算落地鸡挂了也完全不影响本机DNS解析。
+在落地鸡只安装sniproxy，在本机安装dnsmasq，并把本机的系统DNS改为127.0.0.1，通过dnsmasq的DNS分流功能，不必所有域名都经过落地鸡解析
 
 # 一、能解锁的落地机：安装sniproxy
 wget --no-check-certificate -O dnsmasq_sniproxy.sh https://raw.githubusercontent.com/myxuchangbin/dnsmasq_sniproxy_install/master/dnsmasq_sniproxy.sh && bash dnsmasq_sniproxy.sh -fs
