@@ -36,14 +36,16 @@ cat /etc/resolv.conf  查看本机DNS是127.0.0.1
 那说明解锁成功
 
 ### dnsmasq的分流配置文件
-/etc/dnsmasq.d/unlock.conf  默认包含的流媒体域名和上面sniproxy的配置文件一样，增加解锁域名的话，解锁机的/etc/sniproxy.conf也要对应增加  
-例如：  
-A机器，除了Netflix不解，其他全部流媒体本身都能解。那只保留Netflix系列域名就行（不必修改sniproxy.conf）
+/etc/dnsmasq.d/unlock.conf  
 
-系统DNS修改为127.0.0.1后，dnsmasq配置文件的DNS已经取代了系统DNS，建议把下面的配置改为系统原本的DNS（查看备份文件/etc/resolv.conf.bak）  
+系统DNS修改为127.0.0.1后，unlock.conf的DNS配置已经取代了系统DNS，建议把下面的配置改为系统原本的DNS（查看备份文件/etc/resolv.conf.bak）  
 server=8.8.8.8  
 server=1.1.1.1  
 server=208.67.222.222  
+
+默认包含的流媒体域名和上面sniproxy的配置文件一样  
+增加解锁域名：unlock.conf和sniproxy.conf 都要对应增加  
+减少解锁域名：例如本机除了Netflix不解，其他全部流媒体本身都能解。那unlock.conf只保留Netflix系列域名就行，不要改sniproxy.conf
 
 ### 取消解锁：
 ./unlock.sh r
