@@ -44,7 +44,7 @@ server=1.1.1.1
 server=208.67.222.222  
 
 默认包含的流媒体域名和上面sniproxy的配置文件一样  
-增加解锁域名：unlock.conf和sniproxy.conf 都要对应增加  
+增加解锁域名：unlock.conf和sniproxy.conf 都要增加  
 减少解锁域名：例如本机除了Netflix不解，其他全部流媒体本身都能解。那unlock.conf只保留Netflix系列域名就行，不要改sniproxy.conf
 
 ### 取消解锁：
