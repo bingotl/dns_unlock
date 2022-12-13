@@ -59,7 +59,7 @@ EOF
 systemctl stop dnsmasq  
 systemctl disable dnsmasq
 
-# 服务类命令
+### 服务类命令
 systemctl enable dnsmasq && systemctl start dnsmasq  
 systemctl stop dnsmasq && systemctl disable dnsmasq  
 systemctl restart dnsmasq && systemctl status dnsmasq 
