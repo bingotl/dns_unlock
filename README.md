@@ -39,6 +39,7 @@ ipv6_first：query for both IPv4 and IPv6, use IPv6 is present
 wget --no-check-certificate -O unlock.sh https://raw.githubusercontent.com/bingotl/dns_unlock/main/unlock.sh && chmod +x unlock.sh  
 ./unlock.sh ip
 
+2个脚本都安装完后，需要重启你的ss/v2/trojan等代理服务才会生效  
 ping netflix.com  显示的是你的解锁机ip  
 cat /etc/resolv.conf  查看本机DNS是127.0.0.1  
 那说明解锁成功
