@@ -43,7 +43,6 @@ no-poll
 all-servers
 server=8.8.8.8
 server=1.1.1.1
-server=208.67.222.222
 cache-size=2048
 local-ttl=60
 interface=*
@@ -151,12 +150,18 @@ address=/optusnet.com.au/$1
 address=/gamer.com.tw/$1
 address=/bahamut.com.tw/$1
 address=/hinet.net/$1
+address=/dmm.com/$1
+address=/dmm.co.jp/$1
+address=/dmm-extension.com/$1
+address=/dmmapis.com/$1
+address=/api-p.videomarket.jp/$1
+address=/saima.zlzd.xyz/$1
 EOF
 
     systemctl restart dnsmasq
     echo -e "${green} dnsmasq启动成功"
     echo ""
-    echo -e "${yellow} 系统当前DNS（显示为127.0.0.1说明成功）"
+    echo -e "${yellow} 系统当前DNS（显示为127.0.0.1是正常）"
     echo "---------------------"
     cat /etc/resolv.conf
     echo ""
@@ -164,7 +169,8 @@ EOF
     echo "---------------------"
     cat /etc/resolv.conf.bak
     echo ""
-    echo -e "${yellow} 建议把系统默认DNS添加到/etc/dnsmasq.d/unlock.conf文件中"
+    echo -e "${yellow} ping netflix.com为你落地机的ip说明解锁成功"
+    echo -e "${yellow} 需要重启你的ss/v2/trojan等代理服务解锁才会生效"
 else
     echo -e "${red} dnsmasq安装失败, 请检查仓库状况"
 fi
