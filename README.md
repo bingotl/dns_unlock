@@ -1,5 +1,5 @@
 # 前言  
-sniproxy：一个透明代理，用来反代奈非等流媒体网站，需要本机开启80+443端口  
+sniproxy：一个透明代理，用来反代奈非等流媒体网站，需要本机80+443端口  
 dnsmasq：自建一个DNS服务器，用来分流DNS域名是否走sniproxy代理
 
 原版：  
@@ -84,8 +84,8 @@ chattr -i /etc/resolv.conf
 查看本机DNS  
 cat /etc/resolv.conf
 
-### iptables相关命令（解锁机上执行，防止被盗用代理）
-入站规则：先禁止外部所有ip访问本机80/443端口（执行一次就行）  
+### iptables相关命令（落地机执行，防止被盗用sniproxy代理）
+入站规则：禁止外部所有ip访问本机80/443端口（执行一次就行）  
 iptables -I INPUT -p tcp --dport 443 -j DROP  
 iptables -I INPUT -p tcp --dport 80 -j DROP
 
