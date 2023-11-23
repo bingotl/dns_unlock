@@ -156,6 +156,24 @@ address=/dmm-extension.com/$1
 address=/dmmapis.com/$1
 address=/api-p.videomarket.jp/$1
 address=/saima.zlzd.xyz/$1
+address=/challenges.cloudflare.com/$1
+address=/ai.com/$1
+address=/openai.com/$1
+address=/cdn.oaistatic.com/$1
+address=/aiv-cdn.net/$1
+address=/aiv-delivery.net/$1
+address=/amazonprimevideo.cn/$1
+address=/amazonprimevideo.com.cn/$1
+address=/amazonprimevideos.com/$1
+address=/amazonvideo.cc/$1
+address=/media-amazon.com/$1
+address=/prime-video.com/$1
+address=/primevideo.cc/$1
+address=/primevideo.com/$1
+address=/primevideo.info/$1
+address=/primevideo.org/$1
+address=/primevideo.tv/$1
+address=/pv-cdn.net/$1
 EOF
 
     systemctl restart dnsmasq
