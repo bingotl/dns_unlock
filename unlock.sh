@@ -57,6 +57,7 @@ address=/akamaitech.net/$1
 address=/akamaitechnologies.com/$1
 address=/akamaitechnologies.fr/$1
 address=/akamaized.net/$1
+address=/bilibili.com/$1
 address=/edgekey.net/$1
 address=/edgesuite.net/$1
 address=/srip.net/$1
