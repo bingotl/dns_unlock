@@ -32,8 +32,10 @@ ipv4_first：query for both IPv4 and IPv6, use IPv4 is present
 ipv6_first：query for both IPv4 and IPv6, use IPv6 is present  
 
 ### 代理域名列表（白名单）
-配置文件/etc/sniproxy.conf默认已包含Netflix Hulu HBO等常见流媒体域名，此列表只增不减  
-如果不想解锁某个域名，在下面的dnsmasq分流文件改就可以  
+
+本地配置文件/etc/sniproxy.conf  
+已包含常见流媒体域名，详见https://raw.githubusercontent.com/myxuchangbin/dnsmasq_sniproxy_install/master/proxy-domains.txt  
+sniproxy.conf的域名列表只增不减，如果不想解锁某个域名，在下面的dnsmasq分流文件改就可以  
 
 # 二、不能解锁的机器：安装dnsmasq
 wget --no-check-certificate -O unlock.sh https://raw.githubusercontent.com/bingotl/dns_unlock/main/unlock.sh && chmod +x unlock.sh  
