@@ -32,8 +32,7 @@ ipv4_first：query for both IPv4 and IPv6, use IPv4 is present
 ipv6_first：query for both IPv4 and IPv6, use IPv6 is present  
 
 ### 代理域名列表（白名单）
-配置文件/etc/sniproxy.conf默认已包含等常见流媒体域名，此列表只增不减  
-详见https://raw.githubusercontent.com/myxuchangbin/dnsmasq_sniproxy_install/master/proxy-domains.txt  
+配置文件/etc/sniproxy.conf默认已包含Netflix Hulu HBO等常见流媒体域名，此列表只增不减  
 如果不想解锁某个域名，在下面的dnsmasq分流文件改就可以  
 
 # 二、不能解锁的机器：安装dnsmasq
@@ -70,11 +69,11 @@ systemctl stop dnsmasq
 systemctl disable dnsmasq
 
 ### 服务类命令
-systemctl enable dnsmasq && systemctl start dnsmasq  
+systemctl start dnsmasq && systemctl enable dnsmasq  
 systemctl stop dnsmasq && systemctl disable dnsmasq  
 systemctl restart dnsmasq && systemctl status dnsmasq 
  
-systemctl enable sniproxy &&systemctl start sniproxy  
+systemctl start sniproxy &&systemctl enable sniproxy  
 systemctl stop sniproxy && systemctl disable sniproxy              
 systemctl restart sniproxy && systemctl status sniproxy
 
@@ -99,5 +98,5 @@ service iptables save
 iptables配置文件/etc/sysconfig/iptables，修改重启服务生效service iptables restart   
 
 资料  
-[https://github.com/myxuchangbin/dnsmasq_sniproxy_install  ](https://github.com/myxuchangbin/dnsmasq_sniproxy_install/tree/master)  
-[[[https://raw.githubusercontent.com/myxuchangbin/dnsmasq_sniproxy_install/master/sniproxy.conf](https://raw.githubusercontent.com/myxuchangbin/dnsmasq_sniproxy_install/master/proxy-domains.txt)](https://raw.githubusercontent.com/myxuchangbin/dnsmasq_sniproxy_install/master/proxy-domains.txt)https://raw.githubusercontent.com/myxuchangbin/dnsmasq_sniproxy_install/master/proxy-domains.txt](https://raw.githubusercontent.com/myxuchangbin/dnsmasq_sniproxy_install/master/proxy-domains.txt)https://raw.githubusercontent.com/myxuchangbin/dnsmasq_sniproxy_install/master/proxy-domains.txt
+https://github.com/myxuchangbin/dnsmasq_sniproxy_install  
+https://raw.githubusercontent.com/myxuchangbin/dnsmasq_sniproxy_install/master/proxy-domains.txt
