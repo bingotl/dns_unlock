@@ -26,6 +26,8 @@ else
 fi
 
 if [ $? -eq 0 ]; then
+	#下载域名列表文件
+	wget -O proxy-domains.txt https://raw.githubusercontent.com/myxuchangbin/dnsmasq_sniproxy_install/master/proxy-domains.txt
 	systemctl enable dnsmasq
 	chattr -i /etc/resolv.conf
 	
@@ -35,6 +37,9 @@ if [ $? -eq 0 ]; then
 	rm -f /etc/resolv.conf
 	echo "nameserver 127.0.0.1" > /etc/resolv.conf
 	chattr +i /etc/resolv.conf
+	
+if [ -s "proxy-domains.txt" ]; then
+	#调用域名列表
 	cat > /etc/dnsmasq.d/unlock.conf <<EOF
 domain-needed
 bogus-priv
@@ -46,6 +51,27 @@ server=1.1.1.1
 cache-size=2048
 local-ttl=60
 interface=*
+address=/bilibili.com/$1
+EOF
+    while read -r domain; do
+      echo "address=/$domain/$1" >> "/etc/dnsmasq.d/unlock.conf"
+    done < "proxy-domains.txt"
+    rm -f proxy-domains.txt
+else
+	#使用默认列表
+ 	echo -e "${yellow} 代理域名列表获取失败，使用本地默认代理域名列表..."
+	cat > /etc/dnsmasq.d/unlock.conf <<EOF
+domain-needed
+bogus-priv
+no-resolv
+no-poll
+all-servers
+server=8.8.8.8
+server=1.1.1.1
+cache-size=2048
+local-ttl=60
+interface=*
+address=/bilibili.com/$1
 address=/akadns.net/$1
 address=/akam.net/$1
 address=/akamai.com/$1
@@ -57,7 +83,6 @@ address=/akamaitech.net/$1
 address=/akamaitechnologies.com/$1
 address=/akamaitechnologies.fr/$1
 address=/akamaized.net/$1
-address=/bilibili.com/$1
 address=/edgekey.net/$1
 address=/edgesuite.net/$1
 address=/srip.net/$1
@@ -176,18 +201,19 @@ address=/primevideo.org/$1
 address=/primevideo.tv/$1
 address=/pv-cdn.net/$1
 EOF
-
+fi
+	
     systemctl restart dnsmasq
     echo -e "${green} dnsmasq启动成功"
-    echo ""
+    echo -e
     echo -e "${yellow} 系统当前DNS（显示为127.0.0.1是正常）"
-    echo "---------------------"
+    echo -e
     cat /etc/resolv.conf
-    echo ""
+    echo -e
     echo -e "${yellow} DNS备份文件 /etc/resolv.conf.bak"
+    echo -e
     echo "---------------------"
-    cat /etc/resolv.conf.bak
-    echo ""
+    echo -e
     echo -e "${yellow} ping netflix.com为你落地机的ip说明解锁成功"
     echo -e "${yellow} 需要重启你的ss/v2/trojan等代理服务解锁才会生效"
 else
