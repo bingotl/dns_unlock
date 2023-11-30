@@ -206,16 +206,16 @@ fi
     systemctl restart dnsmasq
     echo -e "${green} dnsmasq启动成功"
     echo -e
+    echo -e "${yellow} DNS备份文件 /etc/resolv.conf.bak"
     echo -e "${yellow} 系统当前DNS（显示为127.0.0.1是正常）"
     echo -e
     cat /etc/resolv.conf
-    echo -e
-    echo -e "${yellow} DNS备份文件 /etc/resolv.conf.bak"
     echo -e
     echo "---------------------"
     echo -e
     echo -e "${yellow} ping netflix.com为你落地机的ip说明解锁成功"
     echo -e "${yellow} 需要重启你的ss/v2/trojan等代理服务解锁才会生效"
+    echo -e
 else
     echo -e "${red} dnsmasq安装失败, 请检查仓库状况"
 fi
