@@ -3,11 +3,12 @@ sniproxy：一个透明代理，用来反代奈非等流媒体网站，需要本
 dnsmasq：自建一个DNS服务器，用来分流DNS域名是否走sniproxy代理
 
 原版：  
+https://github.com/myxuchangbin/dnsmasq_sniproxy_install  
 落地机（能解锁）：安装dnsmasq+sniproxy  
 本机（不能解锁）：DNS改为落地机ip，就可以实现解锁。  
 但是有个问题，一旦落地鸡挂了，就可能导致本机DNS错误直接无法上网，而且本机所有域名都要经过落地鸡DNS解析，这就很不舒服。
 
-本脚本原理：  
+本脚本原理：分开部署  
 落地机：只安装sniproxy  
 本机：安装dnsmasq，DNS改为127.0.0.1，就可以实现解锁。  
 dnsmasq取代系统DNS工作，通过配置文件分流，不必所有域名都经过落地鸡解析
