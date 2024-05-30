@@ -185,6 +185,7 @@ address=/saima.zlzd.xyz/$1
 address=/challenges.cloudflare.com/$1
 address=/ai.com/$1
 address=/openai.com/$1
+address=/chatgpt.com/$1
 address=/cdn.oaistatic.com/$1
 address=/aiv-cdn.net/$1
 address=/aiv-delivery.net/$1
